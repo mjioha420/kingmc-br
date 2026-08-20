@@ -393,7 +393,7 @@ if (Test-Path $prefetchPath) {
                 Write-Host ("    Nhóm file trùng lặp: {0}" -f ($entry.Value -join ", ")) -ForegroundColor White
             }
         } else {
-            Write-Host "  Duplicatess: Không có" -ForegroundColor Green
+            Write-Host "  Duplicates: Không có" -ForegroundColor Green
         }
 
         
