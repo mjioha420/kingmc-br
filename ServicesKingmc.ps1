@@ -1,4 +1,6 @@
-﻿$isAdmin = [System.Security.Principal.WindowsPrincipal]::new([System.Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([System.Security.Principal.WindowsBuiltInRole]::Administrator)
+$identity = [System.Security.Principal.WindowsIdentity]::GetCurrent()
+$principal = New-Object System.Security.Principal.WindowsPrincipal($identity)
+$isAdmin = $principal.IsInRole([System.Security.Principal.WindowsBuiltInRole]::Administrator)
 if (-not $isAdmin) {
     Write-Host "`n╔══════════════════════════════════════════════════╗" -ForegroundColor Red
     Write-Host "║           YÊU CẦU QUYỀN QUẢN TRỊ       ║" -ForegroundColor Red
